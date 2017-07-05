@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "Growler Prowler",
-    "description": "Find breweries around you in Vancouver!",
-    "slug": "growler-prowler",
+    "name": "Distillabase",
+    "description": "Find distilleries around you in TX!",
+    "slug": "distillabase-fe",
     "sdkVersion": "18.0.0",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -21,7 +21,7 @@
       "assetExts": ["ttf", "mp4"]
     },
     "android": {
-      "package": "ca.brentvatne.growlerprowler",
+      "package": "ca.jhblacklock.distillabase",
       "config": {
         "googleMaps": {
           "apiKey": "AIzaSyCp-BUoX8B8699rkbnb2P2CK4gXSeesVcc"

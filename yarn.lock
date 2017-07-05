@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@expo/ex-navigation@^2.8.0":
-  version "2.11.2"
-  resolved "https://registry.yarnpkg.com/@expo/ex-navigation/-/ex-navigation-2.11.2.tgz#8b71e6e0471543c58cd3ee99b90f9e60cd505bec"
+"@expo/ex-navigation@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@expo/ex-navigation/-/ex-navigation-3.0.0.tgz#67bcc228ea986020149ff8140672e2aeba939bd4"
   dependencies:
     "@expo/react-native-touchable-native-feedback-safe" "^1.1.0"
     clamp "^1.0.1"
@@ -1732,9 +1732,9 @@ expand-range@^1.8.1:
   dependencies:
     fill-range "^2.1.0"
 
-expo@~18.0.4:
-  version "18.0.4"
-  resolved "https://registry.yarnpkg.com/expo/-/expo-18.0.4.tgz#9f7d70a5ec1ff7965ed402c4932c18d6c8565eb4"
+expo@^18.0.4:
+  version "18.0.6"
+  resolved "https://registry.yarnpkg.com/expo/-/expo-18.0.6.tgz#1b7a1d8514c3e0ac1028973a57cced75c422bc4a"
   dependencies:
     "@expo/vector-icons" "^5.0.0"
     babel-preset-airbnb "^2.2.3"
@@ -1745,6 +1745,7 @@ expo@~18.0.4:
     lottie-react-native "1.1.1"
     md5-file "^3.1.1"
     pretty-format "^20.0.3"
+    prop-types "^15.5.10"
     react-native-branch "2.0.0-beta.3"
     react-native-fbads "https://github.com/callstack-io/react-native-fbads/tarball/v4.1.0"
     react-native-maps "https://github.com/expo/react-native-maps/archive/v0.15.2.tar.gz"
@@ -4446,7 +4447,7 @@ webidl-conversions@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-4.0.1.tgz#8015a17ab83e7e1b311638486ace81da6ce206a0"
 
-websql@expo/node-websql#18.0.0:
+"websql@github:expo/node-websql#18.0.0":
   version "0.4.4"
   resolved "https://codeload.github.com/expo/node-websql/tar.gz/e364fa65146a9e2157a19e5c719e7702c2b6b87a"
   dependencies:
