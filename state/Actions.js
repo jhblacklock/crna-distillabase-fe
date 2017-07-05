@@ -21,45 +21,45 @@ export default class Actions {
     }
   }
 
-  static setBreweries(breweries) {
+  static setDistilleries(distilleries) {
     return {
-      type: ActionTypes.SET_BREWERIES,
-      breweries,
+      type: ActionTypes.SET_DISTILLERIES,
+      distilleries,
     }
   }
 
-  static setNearbyBreweries(breweryIds) {
+  static setNearbyDistilleries(distilleryIds) {
     return {
-      type: ActionTypes.SET_NEARBY_BREWERIES,
-      breweryIds,
+      type: ActionTypes.SET_NEARBY_DISTILLERIES,
+      distilleryIds,
     }
   }
 
-  static setVisitedBreweries(breweryIds) {
+  static setVisitedDistilleries(distilleryIds) {
     return {
-      type: ActionTypes.SET_VISITED_BREWERIES,
-      breweryIds,
+      type: ActionTypes.SET_VISITED_DISTILLERIES,
+      distilleryIds,
     }
   }
 
-  static toggleVisitedBrewery(breweryId) {
+  static toggleVisitedDistillery(distilleryId) {
     return {
-      type: ActionTypes.TOGGLE_VISITED_BREWERY,
-      breweryId,
+      type: ActionTypes.TOGGLE_VISITED_DISTILLERY,
+      distilleryId,
     }
   }
 
-  static addVisitedBrewery(breweryId) {
+  static addVisitedDistillery(distilleryId) {
     return {
-      type: ActionTypes.ADD_VISITED_BREWERY,
-      breweryId,
+      type: ActionTypes.ADD_VISITED_DISTILLERY,
+      distilleryId,
     }
   }
 
-  static removeVisitedBrewery(breweryId) {
+  static removeVisitedDistillery(distilleryId) {
     return {
-      type: ActionTypes.REMOVE_VISITED_BREWERY,
-      breweryId,
+      type: ActionTypes.REMOVE_VISITED_DISTILLERY,
+      distilleryId,
     }
   }
 

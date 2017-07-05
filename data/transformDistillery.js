@@ -1,6 +1,6 @@
 import days from 'days';
 
-type BreweryHours = {
+type DistilleryHours = {
   monday_open: string,
   monday_close: string,
   tuesday_open: string,
@@ -17,13 +17,13 @@ type BreweryHours = {
   sunday_close: string,
 }
 
-type BreweryData = {
+type DistilleryData = {
   accentColor?: string,
   address: string,
   city: string,
   color?: string,
   description: string,
-  hours: BreweryHours,
+  hours: DistilleryHours,
   id: number,
   latitude: string,
   logo: string,
@@ -35,8 +35,8 @@ type BreweryData = {
   title: string,
 }
 
-export default function transformBrewery(brewery: BreweryData, currentDate = new Date()): any {
-  let { hours } = brewery;
+export default function transformDistillery(distillery: DistilleryData, currentDate = new Date()): any {
+  let { hours } = distillery;
   let day = days[currentDate.getDay()];
   let currentTime = `${currentDate.getHours()}:${currentDate.getMinutes()}:00`;
   let openingTimeToday = hours[`${day.toLowerCase()}_open`];
@@ -53,24 +53,24 @@ export default function transformBrewery(brewery: BreweryData, currentDate = new
   );
 
   return {
-    accentColor: brewery.accentColor || '#000',
-    address: brewery.address,
-    city: brewery.city,
+    accentColor: distillery.accentColor || '#000',
+    address: distillery.address,
+    city: distillery.city,
     closingTimeToday,
-    color: brewery.color || '#fff',
-    description: brewery.description,
-    hours: brewery.hours,
-    id: brewery.id,
-    instagram: brewery.social_instagram,
+    color: distillery.color || '#fff',
+    description: distillery.description,
+    hours: distillery.hours,
+    id: distillery.id,
+    instagram: distillery.social_instagram,
     isOpen,
     isOpeningLater,
-    latitude: parseFloat(brewery.latitude),
-    logo: brewery.logo,
-    longitude: parseFloat(brewery.longitude),
-    name: brewery.title,
+    latitude: parseFloat(distillery.latitude),
+    logo: distillery.logo,
+    longitude: parseFloat(distillery.longitude),
+    name: distillery.title,
     openingTimeToday,
-    postalCode: brewery.postal_code.split(' ').join('').toUpperCase(),
-    smallLogo: brewery.logo_small,
-    summary: brewery.summary,
+    postalCode: distillery.postal_code.split(' ').join('').toUpperCase(),
+    smallLogo: distillery.logo_small,
+    summary: distillery.summary,
   };
 }

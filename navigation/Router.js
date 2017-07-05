@@ -3,17 +3,17 @@ import {
 } from '@expo/ex-navigation';
 
 import AuthenticationScreen from '../screens/AuthenticationScreen';
-import BreweryDetailsScreen from '../screens/BreweryDetailsScreen';
-import BreweryListScreen from '../screens/BreweryListScreen';
-import BreweryMapScreen from '../screens/BreweryMapScreen';
+import DistilleryDetailsScreen from '../screens/DistilleryDetailsScreen';
+import DistilleryListScreen from '../screens/DistilleryListScreen';
+import DistilleryMapScreen from '../screens/DistilleryMapScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import TabNavigationLayout from './TabNavigationLayout';
 
 export default createRouter(() => ({
   authentication: () => AuthenticationScreen,
-  details: () => BreweryDetailsScreen,
-  list: () => BreweryListScreen,
-  map: () => BreweryMapScreen,
+  details: () => DistilleryDetailsScreen,
+  list: () => DistilleryListScreen,
+  map: () => DistilleryMapScreen,
   settings: () => SettingsScreen,
   tabNavigation: () => TabNavigationLayout,
 }), {

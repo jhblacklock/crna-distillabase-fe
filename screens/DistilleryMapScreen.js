@@ -8,8 +8,8 @@ import { connect } from 'react-redux';
 import { Components } from 'expo';
 const { MapView } = Components;
 
-@connect(data => BreweryMapScreen.getDataProps(data))
-export default class BreweryMapScreen extends React.Component {
+@connect(data => DistilleryMapScreen.getDataProps(data))
+export default class DistilleryMapScreen extends React.Component {
   static route = {
     navigationBar: {
       visible: false,
@@ -18,12 +18,12 @@ export default class BreweryMapScreen extends React.Component {
 
   static getDataProps(data) {
     return {
-      breweries: data.breweries.all,
+      distilleries: data.distilleries.all,
     };
   }
 
   render() {
-    let { breweries } = this.props;
+    let { distilleries } = this.props;
 
     return (
       <View style={{flex: 1}}>
@@ -38,8 +38,8 @@ export default class BreweryMapScreen extends React.Component {
             longitudeDelta: 0.1,
           }}>
           {
-            this.props.breweries.map(brewery => {
-              let { latitude, longitude, name, isOpen } = brewery;
+            this.props.distilleries.map(distillery => {
+              let { latitude, longitude, name, isOpen } = distillery;
 
               return (
                 <MapView.Marker

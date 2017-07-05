@@ -22,7 +22,7 @@ import TouchableNativeFeedback from '@expo/react-native-touchable-native-feedbac
 import Modal from 'react-native-root-modal';
 
 import Actions from '../state/Actions';
-import BreweryList from '../components/BreweryList';
+import DistilleryList from '../components/DistilleryList';
 import Layout from '../constants/Layout';
 import {
   BoldText,
@@ -37,7 +37,7 @@ const MenuOptions = [
 ];
 
 @connect()
-export default class BreweryListScreen extends React.Component {
+export default class DistilleryListScreen extends React.Component {
   static route = {
     navigationBar: {
       visible: false,
@@ -64,10 +64,10 @@ export default class BreweryListScreen extends React.Component {
 
     return (
       <View style={styles.container}>
-        {selectedOption === 'All' && <BreweryList {...defaultListProps} />}
-        {selectedOption === 'Nearby' && <BreweryList {...defaultListProps} nearby />}
-        {selectedOption === 'Visited' && <BreweryList {...defaultListProps} visited />}
-        {selectedOption === 'Unvisited' && <BreweryList {...defaultListProps} notVisited />}
+        {selectedOption === 'All' && <DistilleryList {...defaultListProps} />}
+        {selectedOption === 'Nearby' && <DistilleryList {...defaultListProps} nearby />}
+        {selectedOption === 'Visited' && <DistilleryList {...defaultListProps} visited />}
+        {selectedOption === 'Unvisited' && <DistilleryList {...defaultListProps} notVisited />}
 
         {this._renderNavigationBar()}
 
@@ -142,7 +142,7 @@ export default class BreweryListScreen extends React.Component {
             onPress={this._handleToggleMenu}>
             <View style={{flexDirection: 'row'}}>
               <BoldText style={styles.navigationBarTitle}>
-                {this.state.selectedOption} Breweries
+                {this.state.selectedOption} Distilleries
               </BoldText>
 
               <Animated.View style={{marginLeft: 2, marginTop: 2, transform: [{rotate: arrowRotation}]}}>

@@ -1,12 +1,12 @@
 import { Record, List } from 'immutable';
 
-export const BreweriesState = Record({
+export const DistilleriesState = Record({
   all: new List(),
   nearby: new List(),
   visited: new List(),
 });
 
-export const Brewery = Record({
+export const Distillery = Record({
   id: '',
   accentColor: '#000',
   address: '',

@@ -11,33 +11,33 @@ import {
 import { connect } from 'react-redux';
 import { withNavigation } from '@expo/ex-navigation';
 
-import BreweryListItem from './BreweryListItem';
+import DistilleryListItem from './DistilleryListItem';
 
-function breweriesFromIds(all, ids) {
-  return ids.map(id => all.find(brewery => brewery.id === id));
+function distilleriesFromIds(all, ids) {
+  return ids.map(id => all.find(distillery => distillery.id === id));
 }
 
 @withNavigation
-@connect((data, props) => BreweryList.getDataProps(data, props))
-export default class BreweryList extends React.Component {
+@connect((data, props) => DistilleryList.getDataProps(data, props))
+export default class DistilleryList extends React.Component {
   static getDataProps(data, props) {
-    let { breweries } = data;
-    let { all, nearby, visited } = breweries;
+    let { distilleries } = data;
+    let { all, nearby, visited } = distilleries;
 
     if (props.nearby) {
-      breweries = breweriesFromIds(all, nearby);
+      distilleries = distilleriesFromIds(all, nearby);
     } else if (props.visited) {
-      breweries = breweriesFromIds(all, visited);
+      distilleries = distilleriesFromIds(all, visited);
     } else if (props.notVisited) {
-      let allBreweryIds = all.map(brewery => brewery.id);
-      let notVisited = allBreweryIds.filter(id => !visited.includes(id));
-      breweries = breweriesFromIds(all, notVisited);
+      let allDistilleryIds = all.map(distillery => distillery.id);
+      let notVisited = allDistilleryIds.filter(id => !visited.includes(id));
+      distilleries = distilleriesFromIds(all, notVisited);
     } else {
-      breweries = all;
+      distilleries = all;
     }
 
     return {
-      breweries,
+      distilleries,
     }
   }
 
@@ -57,7 +57,7 @@ export default class BreweryList extends React.Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    return nextProps.breweries !== this.props.breweries;
+    return nextProps.distilleries !== this.props.distilleries;
   }
 
   scrollTo(opts) {
@@ -99,17 +99,17 @@ export default class BreweryList extends React.Component {
       );
     }
 
-    return this.props.breweries.map(brewery => (
-      <BreweryListItem
-        onPress={() => this._handlePressBrewery(brewery) }
-        brewery={brewery}
-        key={brewery.name}
+    return this.props.distilleries.map(distillery => (
+      <DistilleryListItem
+        onPress={() => this._handlePressDistillery(distillery) }
+        distillery={distillery}
+        key={distillery.name}
       />
     ));
   }
 
-  _handlePressBrewery = (brewery) => {
-    this.props.navigator.push('details', {breweryId: brewery.id});
+  _handlePressDistillery = (distillery) => {
+    this.props.navigator.push('details', {distilleryId: distillery.id});
   }
 }
 

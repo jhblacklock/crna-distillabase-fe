@@ -11,8 +11,8 @@ import ImageGalleryPortal from './components/ImageGalleryPortal';
 import LocalStorage from './state/LocalStorage';
 import Router from './navigation/Router';
 import Store from './state/Store';
-import { Brewery, User } from './state/Records';
-import AllBreweries from './data';
+import { Distillery, User } from './state/Records';
+import AllDistilleries from './data';
 
 export default class AppContainer extends React.Component {
   render() {
@@ -77,11 +77,11 @@ class App extends React.Component {
 
   _loadCacheAsync = async () => {
     let user = new User(await LocalStorage.getUserAsync());
-    let breweries = new List(AllBreweries.map(data => new Brewery(data)));
-    let visitedBreweries = new List(await LocalStorage.getVisitedBreweriesAsync());
+    let distilleries = new List(AllDistilleries.map(data => new Distillery(data)));
+    let visitedDistilleries = new List(await LocalStorage.getVisitedDistilleriesAsync());
     this.props.dispatch(Actions.setCurrentUser(user));
-    this.props.dispatch(Actions.setBreweries(breweries));
-    this.props.dispatch(Actions.setVisitedBreweries(visitedBreweries));
+    this.props.dispatch(Actions.setDistilleries(distilleries));
+    this.props.dispatch(Actions.setVisitedDistilleries(visitedDistilleries));
 
     this.setState({
       dataReady: true,

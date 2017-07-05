@@ -1,22 +1,22 @@
-import transformBrewery from '../transformBrewery';
+import transformDistillery from '../transformDistillery';
 
 describe('hours', () => {
   it('correctly calculates when open', () => {
     const openDateTime = new Date("Fri Oct 21 2016 15:55:00 GMT-0700 (PDT)");
-    const brewery = transformBrewery(exampleBrewery, openDateTime);
-    expect(brewery.isOpen).toBe(true);
+    const distillery = transformDistillery(exampleDistillery, openDateTime);
+    expect(distillery.isOpen).toBe(true);
   });
 
   it('correctly calculates when closed', () => {
     const closedDateTime = new Date("Fri Oct 21 2016 23:55:00 GMT-0700 (PDT)");
-    const brewery = transformBrewery(exampleBrewery, closedDateTime);
-    expect(brewery.isOpen).toBe(false);
+    const distillery = transformDistillery(exampleDistillery, closedDateTime);
+    expect(distillery.isOpen).toBe(false);
   });
 });
 
-const exampleBrewery = {
+const exampleDistillery = {
   "id": 3,
-  "type":"brewery",
+  "type":"distillery",
   "title":"33 Acres",
   "address":"15 W 8th Ave",
   "city":"Vancouver",
@@ -51,7 +51,7 @@ const exampleBrewery = {
   "banner_medium":"http://storage.growlerfill.ca/147/conversions/medium.png",
   "hours":{
     "timezone":"America/Vancouver",
-    "brewery_id":1,
+    "distillery_id":1,
     "monday_open":"11:00:00",
     "monday_close":"23:00:00",
     "tuesday_open":"11:00:00",

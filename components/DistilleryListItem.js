@@ -15,17 +15,17 @@ import Layout from '../constants/Layout';
 import { RegularText, BoldText } from './StyledText';
 import formatTime from '../util/formatTime';
 
-export default class BreweryListItem extends React.Component {
+export default class DistilleryListItem extends React.Component {
 
   shouldComponentUpdate(nextProps) {
-    return nextProps.brewery !== this.props.brewery;
+    return nextProps.distillery !== this.props.distillery;
   }
 
   render() {
     let {
       smallLogo,
       name,
-    } = this.props.brewery;
+    } = this.props.distillery;
 
     return (
       <TouchableNativeFeedback
@@ -71,7 +71,7 @@ export default class BreweryListItem extends React.Component {
       isOpen,
       openingTimeToday,
       closingTimeToday,
-    } = this.props.brewery;
+    } = this.props.distillery;
 
     if (openingTimeToday && closingTimeToday) {
       return `${formatTime(openingTimeToday)} - ${formatTime(closingTimeToday)} (${isOpen ? 'Open' : 'Closed'})`
@@ -85,7 +85,7 @@ export default class BreweryListItem extends React.Component {
       address,
       distance,
       direction,
-    } = this.props.brewery;
+    } = this.props.distillery;
 
     let addressText = address;
 

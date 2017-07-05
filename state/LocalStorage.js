@@ -2,7 +2,7 @@ import { AsyncStorage } from 'react-native';
 
 const Keys = {
   User: 'GrowlerUser',
-  VisitedBreweries: 'GrowlerVisited',
+  VisitedDistilleries: 'GrowlerVisited',
 };
 
 async function getUserAsync() {
@@ -23,12 +23,12 @@ function removeUserAsync() {
   return AsyncStorage.removeItem(Keys.User);
 }
 
-function saveVisitedBreweriesAsync(breweryIds) {
-  return AsyncStorage.setItem(Keys.VisitedBreweries, JSON.stringify(breweryIds));
+function saveVisitedDistilleriesAsync(distilleryIds) {
+  return AsyncStorage.setItem(Keys.VisitedDistilleries, JSON.stringify(distilleryIds));
 }
 
-async function getVisitedBreweriesAsync() {
-  let results = await AsyncStorage.getItem(Keys.VisitedBreweries);
+async function getVisitedDistilleriesAsync() {
+  let results = await AsyncStorage.getItem(Keys.VisitedDistilleries);
 
   try {
     return JSON.parse(results);
@@ -45,7 +45,7 @@ export default {
   saveUserAsync,
   getUserAsync,
   removeUserAsync,
-  saveVisitedBreweriesAsync,
-  getVisitedBreweriesAsync,
+  saveVisitedDistilleriesAsync,
+  getVisitedDistilleriesAsync,
   clearAllAsync,
 };

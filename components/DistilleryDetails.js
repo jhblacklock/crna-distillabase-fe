@@ -34,13 +34,13 @@ import {
 import formatTime from '../util/formatTime';
 import Layout from '../constants/Layout';
 
-export default class BreweryDetails extends React.Component {
+export default class DistilleryDetails extends React.Component {
   state = {
     scrollY: new Animated.Value(0),
   }
 
   render() {
-    let { brewery } = this.props;
+    let { distillery } = this.props;
     let { scrollY } = this.state;
 
     return (
@@ -58,11 +58,11 @@ export default class BreweryDetails extends React.Component {
             <View style={styles.heroSpacer} />
 
             <View style={styles.contentContainerStyle}>
-              <MapCard brewery={brewery} onPress={this._handlePressDirections} />
-              <SummaryCard text={brewery.summary} />
-              <DescriptionCard text={brewery.description} />
-              <InstagramPhotosCard profile={brewery.instagram} />
-              <VisitedCard breweryId={this.props.brewery.id} />
+              <MapCard distillery={distillery} onPress={this._handlePressDirections} />
+              <SummaryCard text={distillery.summary} />
+              <DescriptionCard text={distillery.description} />
+              <InstagramPhotosCard profile={distillery.instagram} />
+              <VisitedCard distilleryId={this.props.distillery.id} />
             </View>
           </Animated.ScrollView>
         </View>
@@ -70,13 +70,13 @@ export default class BreweryDetails extends React.Component {
         {this._renderNavigationBarShadow()}
         {this._renderNavigationBar()}
 
-        <StatusBar barStyle={getBarStyle(brewery.color)} />
+        <StatusBar barStyle={getBarStyle(distillery.color)} />
       </View>
     );
   }
 
   _renderHeroHeader() {
-    let { brewery } = this.props;
+    let { distillery } = this.props;
     let { scrollY } = this.state;
 
     let logoScale = scrollY.interpolate({
@@ -107,13 +107,13 @@ export default class BreweryDetails extends React.Component {
       <View>
         <Animated.View style={[
           styles.heroBackground,
-          { backgroundColor: brewery.color,
+          { backgroundColor: distillery.color,
             transform: [{translateY: heroBackgroundTranslateY}] }]}
          />
 
         <View style={styles.hero}>
           <Animated.Image
-            source={{uri: brewery.logo}}
+            source={{uri: distillery.logo}}
             style={[styles.heroImage, {opacity: logoOpacity, transform: [{scale: logoScale}, {translateY: logoTranslateY}]}]}
             resizeMode="contain"
           />
@@ -132,7 +132,7 @@ export default class BreweryDetails extends React.Component {
     let {
       color,
       accentColor,
-    } = this.props.brewery;
+    } = this.props.distillery;
 
     let {
       scrollY,
@@ -195,7 +195,7 @@ export default class BreweryDetails extends React.Component {
       isOpeningLater,
       name,
       openingTimeToday,
-    } = this.props.brewery;
+    } = this.props.distillery;
 
     let { scrollY } = this.state;
 
@@ -252,7 +252,7 @@ export default class BreweryDetails extends React.Component {
       address,
       postalCode,
       city,
-    } = this.props.brewery;
+    } = this.props.distillery;
 
     let daddr = encodeURIComponent(`${address} ${postalCode}, ${city}`);
 
